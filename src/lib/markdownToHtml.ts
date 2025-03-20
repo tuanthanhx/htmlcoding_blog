@@ -12,6 +12,7 @@ export default async function markdownToHtml(markdown: string) {
   .use(remarkRehype, { allowDangerousHtml: true })
   .use(rehypeRaw)
   .use(rehypeFormat)
+  // @ts-ignore
   .use(rehypePrism)
   .use(rehypeStringify)
   .process(markdown);
