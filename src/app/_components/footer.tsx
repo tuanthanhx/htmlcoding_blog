@@ -3,8 +3,8 @@ import { EXAMPLE_PATH } from "@/lib/constants";
 
 export function Footer() {
   return (
-    <footer className="bg-neutral-50 border-t border-neutral-200 dark:bg-slate-800">
-      <Container>
+    <footer className="bg-[#191919] py-[35px]">
+      {/* <Container>
         <div className="py-28 flex flex-col lg:flex-row items-center">
           <h3 className="text-4xl lg:text-[2.5rem] font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
             Statically Generated with Next.js.
@@ -24,7 +24,10 @@ export function Footer() {
             </a>
           </div>
         </div>
-      </Container>
+      </Container> */}
+      <div className="mx-auto px-[20px] w-full max-w-[1272px]">
+        <p className="text-center text-[#b3abab]">&copy; 2025 HTMLCODING Team. All Rights Reserved.</p>
+      </div>
     </footer>
   );
 }
