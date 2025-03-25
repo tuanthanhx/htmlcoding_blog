@@ -3,10 +3,23 @@
 }
 
 .markdown p,
+.markdown blockquote
 .markdown ul,
-.markdown ol,
-.markdown blockquote {
+.markdown ol {
   @apply my-[1em];
+}
+
+.markdown ul,
+.markdown ol {
+  @apply pl-[1.5em];
+}
+
+.markdown ul {
+  @apply list-disc;
+}
+
+.markdown ol {
+  @apply list-decimal;
 }
 
 .markdown h2,
@@ -14,7 +27,7 @@
 .markdown h4,
 .markdown h5,
 .markdown h6 {
-  @apply font-bold leading-snug m-[2em_0_1em];
+  @apply font-semibold leading-snug m-[2em_0_1em];
 }
 
 .markdown h2 {
@@ -35,4 +48,16 @@
 
 .markdown h6 {
   @apply text-[1em];
+}
+
+
+.markdown code:not([class*="language-"]) {
+  padding: 0.05em 0.2em 0.1em;
+  box-shadow: 0 0 0 1px #e4e7eb;
+  border-radius: 0.02rem;
+  background-color: rgba(38, 50, 56, 0.04);
+  color: #b17d00;
+  font-family: Courier, monospace;
+  word-break: break-word;
+  vertical-align: middle;
 }

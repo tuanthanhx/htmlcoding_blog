@@ -10,10 +10,23 @@ export function getPostSlugs() {
 }
 
 export function getPostBySlug(slug: string) {
-  const realSlug = slug.replace(/\.md$/, '');
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
+  const files = fs.readdirSync(postsDirectory);
+  const fileName = files.find((name) => name.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '') === slug);
+
+  if (!fileName) {
+    throw new Error(`Post with slug "${slug}" not found`);
+  }
+
+  const fullPath = join(postsDirectory, fileName);
   const fileContents = fs.readFileSync(fullPath, 'utf8');
   const { data, content } = matter(fileContents);
+
+  const realSlug = fileName.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
+
+  // Extract date from filename prefix
+  const datePrefix = fileName.match(/^\d{4}-\d{2}-\d{2}/)?.[0];
+  if (!datePrefix) throw new Error(`Invalid filename format: ${fileName}. Expected YYYY-MM-DD prefix.`);
+  data.date = `${datePrefix}T00:00:00.000Z`;;
 
   // Calculate reading time
   const wordsPerMinute = 200;
@@ -24,10 +37,21 @@ export function getPostBySlug(slug: string) {
 }
 
 export function getAllPosts(): Post[] {
-  const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    // sort posts by date in descending order
+  const fileNames = getPostSlugs();
+  const posts = fileNames
+    .map((fileName) => {
+      const slug = fileName.replace(/^\d{4}-\d{2}-\d{2}-/, '').replace(/\.md$/, '');
+      const fullPath = join(postsDirectory, fileName);
+      const fileContents = fs.readFileSync(fullPath, 'utf8');
+      const { data, content } = matter(fileContents);
+
+      // Extract date from filename prefix
+      const datePrefix = fileName.match(/^\d{4}-\d{2}-\d{2}/)?.[0];
+      if (!datePrefix) return null;
+      data.date = `${datePrefix}T00:00:00.000Z`;;
+
+      return { ...data, slug, content } as Post;
+    })
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }

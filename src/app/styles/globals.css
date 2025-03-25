@@ -7,6 +7,11 @@
   --footer-height: 94px;
 }
 
+b,
+strong {
+  @apply font-semibold;
+}
+
 .post pre[class*=language-] {
   @apply mb-6;
 }
