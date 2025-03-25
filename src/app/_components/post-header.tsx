@@ -9,7 +9,7 @@ type Props = {
   coverImage: string;
   date: string;
   author: Author;
-  readingTime: number;
+  readingTime?: number;
 };
 
 export function PostHeader({ title, coverImage, date, author, readingTime }: Props) {
