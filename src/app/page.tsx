@@ -6,7 +6,7 @@ export default function Index() {
   const allPosts = getAllPosts();
   return (
     <main>
-      <div className="mt-10 mx-auto px-[20px] w-full max-w-[1272px] flex justify-between gap-10">
+      <div className="mx-auto pt-10 px-[20px] w-full max-w-[1272px] lg:flex lg:justify-between lg:gap-10">
         <div className="w-full pb-12">
           <div>
             <BlogGrid posts={allPosts} />

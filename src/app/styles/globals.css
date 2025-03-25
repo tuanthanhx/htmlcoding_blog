@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --header-height: 110px;
+  --footer-height: 94px;
+}
+
 .post pre[class*=language-] {
   @apply mb-6;
 }

@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className={cn(poppins.className, 'bg-white')}>
         <div>
           <Header />
-          {/* <div>{children}</div> */}
+          <div className="min-h-[calc(100vh_-_var(--header-height)_-_var(--footer-height))]">{children}</div>
           <Footer />
         </div>
       </body>

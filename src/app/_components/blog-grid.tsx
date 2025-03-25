@@ -8,7 +8,7 @@ type Props = {
 
 export function BlogGrid({ posts }: Props) {
   return (
-    <ul className="grid grid-cols-2 gap-8">
+    <ul className="grid grid-cols-1 sm:grid-cols-2 sm:gap-[20px] lg:gap-8">
       {posts.map((post) => (
         <li key={post.slug}>
           <CoverImage title={post.title} src={post.coverImage} slug={post.slug} />
