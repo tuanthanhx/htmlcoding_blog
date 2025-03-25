@@ -1,6 +1,6 @@
-import { BlogGrid } from "@/app/_components/blog-grid";
-import { CommonSidebar } from "@/app/_components/common-sidebar";
-import { getAllPosts } from "@/lib/api";
+import { BlogGrid } from '@/app/_components/blog-grid';
+import { CommonSidebar } from '@/app/_components/common-sidebar';
+import { getAllPosts } from '@/lib/api';
 
 export default function Index() {
   const allPosts = getAllPosts();
