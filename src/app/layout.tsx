@@ -36,9 +36,9 @@ export default function RootLayout({
       <body
         className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
       >
-        <div className="pt-[80px]">
+        <div className="pt-[120px]">
           <Header />
-          <div className="min-h-screen" style={{opacity: .2, background: 'orange'}}>{children}</div>
+          <div className="min-h-screen">{children}</div>
           <Footer />
         </div>
         
