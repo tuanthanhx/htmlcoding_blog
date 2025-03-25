@@ -36,7 +36,7 @@ export default function RootLayout({
       <body className={cn(poppins.className, 'bg-white')}>
         <div>
           <Header />
-          <div>{children}</div>
+          {/* <div>{children}</div> */}
           <Footer />
         </div>
       </body>
