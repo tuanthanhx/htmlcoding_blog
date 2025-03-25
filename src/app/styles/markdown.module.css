@@ -1,0 +1,38 @@
+.markdown {
+  @apply text-base leading-[1.8];
+}
+
+.markdown p,
+.markdown ul,
+.markdown ol,
+.markdown blockquote {
+  @apply my-[1em];
+}
+
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdown h6 {
+  @apply font-bold leading-snug m-[2em_0_1em];
+}
+
+.markdown h2 {
+  @apply text-[1.8em];
+}
+
+.markdown h3 {
+  @apply text-[1.6em];
+}
+
+.markdown h4 {
+  @apply text-[1.4em];
+}
+
+.markdown h5 {
+  @apply text-[1.2em];
+}
+
+.markdown h6 {
+  @apply text-[1em];
+}

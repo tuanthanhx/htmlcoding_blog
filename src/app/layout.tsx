@@ -2,12 +2,17 @@ import Header from "@/app/_components/header";
 import Footer from "@/app/_components/footer";
 import { CMS_NAME, HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Poppins } from "next/font/google";
 import cn from "classnames";
 
-import "./globals.css";
+import "@/app/styles/globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const poppins = Poppins({
+    subsets: ["latin"],
+    weight: ["400", "700"],
+    style: ["normal", "italic"],
+    display: "swap"
+ });
 
 export const metadata: Metadata = {
   title: `Next.js Blog Example with ${CMS_NAME}`,
@@ -34,11 +39,12 @@ export default function RootLayout({
 
       </head>
       <body
-        className={cn(inter.className, "bg-[#f8f8f2]")}
+        className={cn(poppins.className, "bg-white")}
       >
-        <div className="pt-[134px]">
+        <div>
           <Header />
-          <div className="min-h-screen">{children}</div>
+          {/* <div className="min-h-screen">{children}</div> */}
+          <div>{children}</div>
           <Footer />
         </div>
         

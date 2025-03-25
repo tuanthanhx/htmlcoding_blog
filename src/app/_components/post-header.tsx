@@ -9,23 +9,25 @@ type Props = {
   coverImage: string;
   date: string;
   author: Author;
+  readingTime: number;
 };
 
-export function PostHeader({ title, coverImage, date, author }: Props) {
+export function PostHeader({ title, coverImage, date, author, readingTime }: Props) {
   return (
     <>
-      <div>
-        <PostTitle>{title}</PostTitle>
-        <div className="mb-6">
-          <Avatar name={author.name} picture={author.picture} />
-          <div className="mt-4">
-            <DateFormatter dateString={date} />
-          </div>
-        </div>
-      </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
+      <div className="mb-6">
         <CoverImage title={title} src={coverImage} />
       </div>
+      <div className="mb-12">
+        <Avatar name={author.name} picture={author.picture} />
+        <div className="mt-4">
+          Posted on <DateFormatter dateString={date} />
+        </div>
+        <div className="mt-2">
+          {readingTime} min read
+        </div>
+      </div>
+      <PostTitle>{title}</PostTitle>
     </>
   );
 }

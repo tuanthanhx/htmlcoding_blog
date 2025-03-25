@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.post pre[class*=language-] {
+  @apply mb-6;
+}
+
+.post code[class*=language-] {
+  @apply text-base leading-[1.8];
+}
