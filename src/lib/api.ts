@@ -52,6 +52,7 @@ export function getAllPosts(): Post[] {
 
       return { ...data, slug, content } as Post;
     })
+    .filter((post): post is Post => post !== null)
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }

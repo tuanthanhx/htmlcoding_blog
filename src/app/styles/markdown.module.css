@@ -61,3 +61,28 @@
   word-break: break-word;
   vertical-align: middle;
 }
+
+.markdown table {
+  width: 100%; /* Full width */
+  border-collapse: collapse; /* Merges borders */
+  margin-bottom: 1rem; /* Optional spacing below table */
+}
+
+.markdown th,
+.markdown td {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+}
+
+.markdown th {
+  background-color: #dddddd;
+  font-weight: 600;
+}
+
+.markdown tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.markdown tr:hover {
+  background-color: #f1f5f9;
+}
