@@ -8,7 +8,7 @@ const Header = () => {
     //   </Link>
     //   .
     // </h2>
-    <header className="fixed w-full left-0 top-0 bg-white shadow-[0_3px_6px_rgba(0,0,0,0.15)] z-[10000]">
+    <header className="fixed w-full left-0 top-0 bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] z-[10000]">
       <div className="mx-auto px-[20px] py-[10px] w-full max-w-[1272px]">
         <a href="/" className="font-mono text-[60px] font-[900]">HTMLCODING Blog</a>
       </div>

@@ -28,7 +28,7 @@ export function BlogGrid({ posts }: Props) {
     // </section>
     <ul className="grid grid-cols-3 gap-8">
       {posts.map((post) => (
-        <li key={post.slug} className="group bg-[#f5f8fa] rounded-xl overflow-hidden">
+        <li key={post.slug} className="group bg-[#f5f8fa] rounded-lg overflow-hidden">
           <Link href={`/posts/${post.slug}`}>
             <figure className="item-image overflow-hidden">
               <img className="group-hover:scale-110 transition-transform duration-300" src={post.coverImage} alt={post.title} />

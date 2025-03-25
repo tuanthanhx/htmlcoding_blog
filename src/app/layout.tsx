@@ -34,9 +34,9 @@ export default function RootLayout({
 
       </head>
       <body
-        className={cn(inter.className, "dark:bg-slate-900 dark:text-slate-400")}
+        className={cn(inter.className, "bg-[#f8f8f2]")}
       >
-        <div className="pt-[120px]">
+        <div className="pt-[134px]">
           <Header />
           <div className="min-h-screen">{children}</div>
           <Footer />
