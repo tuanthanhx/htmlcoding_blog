@@ -1,3 +1,4 @@
+export const CMS_DOMAIN = 'https://blog.htmlcoding.net';
 export const CMS_NAME = 'HTMLCODING Blog';
 export const CMS_TITLE = 'HTMLCODING Blog – Web Dev Tips, Tutorials & Best Practices';
 export const CMS_DESC = 'Explore expert web development tips, tutorials, and best practices.';
