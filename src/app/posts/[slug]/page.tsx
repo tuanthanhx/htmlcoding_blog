@@ -28,26 +28,12 @@ export default async function Post(props: Params) {
       <div className="mx-auto pt-10 px-[20px] w-full max-w-[1272px] lg:flex lg:justify-between lg:gap-10">
         <div className="w-full pb-12">
           <article className="post">
-            {/* <h2 className="mb-5 font-bold text-3xl">{post.title}</h2> */}
             <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} readingTime={post.readingTime} />
             <PostBody content={content} />
           </article>
         </div>
         <CommonSidebar />
       </div>
-
-      {/* <Alert preview={post.preview} />
-      <Container>
-        <article className="mb-32">
-          <PostHeader
-            title={post.title}
-            coverImage={post.coverImage}
-            date={post.date}
-            author={post.author}
-          />
-          <PostBody content={content} />
-        </article>
-      </Container> */}
     </main>
   );
 }
@@ -66,7 +52,7 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
     return notFound();
   }
 
-  const title = `${post.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${post.title} - ${CMS_NAME}`;
 
   return {
     title,
