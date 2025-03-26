@@ -2,9 +2,9 @@
 title: "A Deep Dive into <meta> Tags for SEO and Social Sharing"
 excerpt: ""
 tags: ["HTML", "CSS"]
-coverImage: "/uploads/2025-03/cover.jpg"
+coverImage: "/uploads/2025-03/cover_004.jpg"
 ogImage:
-  url: "/uploads/2025-03/cover.jpg"
+  url: "/uploads/2025-03/cover_004.jpg"
 author:
   name: Tuan Thanh Ngo
   picture: "/uploads/authors/thanh.jpg"

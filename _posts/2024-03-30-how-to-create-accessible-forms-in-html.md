@@ -2,9 +2,9 @@
 title: "How to Create Accessible Forms in HTML"
 excerpt: ""
 tags: ["HTML", "CSS"]
-coverImage: "/uploads/2025-03/cover.jpg"
+coverImage: "/uploads/2025-03/cover_006.jpg"
 ogImage:
-  url: "/uploads/2025-03/cover.jpg"
+  url: "/uploads/2025-03/cover_006.jpg"
 author:
   name: Tuan Thanh Ngo
   picture: "/uploads/authors/thanh.jpg"

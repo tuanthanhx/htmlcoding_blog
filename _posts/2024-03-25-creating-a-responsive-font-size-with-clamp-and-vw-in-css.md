@@ -2,9 +2,9 @@
 title: "Creating a Responsive Font Size with clamp() and vw in CSS"
 excerpt: ""
 tags: ["Responsive", "CSS"]
-coverImage: "/uploads/2025-03/cover.jpg"
+coverImage: "/uploads/2025-03/cover_001.jpg"
 ogImage:
-  url: "/uploads/2025-03/cover.jpg"
+  url: "/uploads/2025-03/cover_001.jpg"
 author:
   name: Tuan Thanh Ngo
   picture: "/uploads/authors/thanh.jpg"
