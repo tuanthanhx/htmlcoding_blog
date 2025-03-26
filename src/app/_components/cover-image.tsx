@@ -13,10 +13,9 @@ const CoverImage = ({ title, src, slug, thumbnail }: Props) => {
     <Image
       src={src}
       alt={title}
-      className="w-full"
+      className="w-full shadow-[0_0_0_1px_rgba(0,0,0,.05)]"
       width={thumbnail ? 400 : 832}
       height={thumbnail ? 197: 410}
-      className="shadow-[0_0_0_1px_rgba(0,0,0,.05)]"
     />
   );
   return (
