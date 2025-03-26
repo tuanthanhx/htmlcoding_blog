@@ -1,15 +1,50 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import { getAllPosts } from '@/lib/api';
 
-type Props = {
-  children?: ReactNode;
-};
+export function CommonSidebar() {
+  const allPosts = getAllPosts();
+  const allTags = Array.from(new Set(allPosts.flatMap((post) => post.tags || []).map((tag) => tag.toLowerCase()))).sort();
 
-export function CommonSidebar({ children }: Props) {
   return (
-    <aside className="hidden lg:block lg:flex-[360px_0_0] p-5 bg-gray-100">
-      {/* <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6 h-[320px] mb-5"></div>
-      <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6 h-[320px] mb-5"></div>
-      <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6 h-[320px]"></div> */}
+    <aside className="lg:flex-[360px_0_0] p-5 bg-gray-100">
+      <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6">
+        <h2 className="mb-6 text-2xl font-bold">Sponsors</h2>
+        <ul className="space-y-6">
+          <li>
+            <Link href="https://htmlcoding.net" target="_blank" className="hover:opacity-90">
+              <Image src="/assets/sponsors/htmlcoding.jpg" alt="HTMLCODING" className="w-full" width="272" height="143" />
+            </Link>
+          </li>
+          <li>
+            <Link href="https://vercel.com" target="_blank" className="hover:opacity-90" rel="noopener noreferrer nofollow">
+              <Image src="/assets/sponsors/vercel.jpg" alt="Vercel" className="w-full" width="272" height="143" />
+            </Link>
+          </li>
+          <li>
+            <Link href="https://nextjs.org/" target="_blank" className="hover:opacity-90" rel="noopener noreferrer nofollow">
+              <Image src="/assets/sponsors/next.jpg" alt="Vercel" className="w-full" width="272" height="143" />
+            </Link>
+          </li>
+        </ul>
+      </div>
+      <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6 mt-5">
+        <h2 className="mb-6 text-2xl font-bold">Tags</h2>
+        {allTags.length > 0 ? (
+          <ul className="space-y-2">
+            {allTags.map((tag) => (
+              <li key={tag}>
+                <Link href={`/tags/${encodeURIComponent(tag)}`} className="text-blue-600 hover:text-blue-800 transition-colors">
+                  #{tag}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>No tags available.</p>
+        )}
+      </div>
     </aside>
   );
 }

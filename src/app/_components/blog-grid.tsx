@@ -12,7 +12,7 @@ export function BlogGrid({ posts }: Props) {
       {posts.map((post) => (
         <li key={post.slug}>
           <CoverImage title={post.title} src={post.coverImage} slug={post.slug} thumbnail />
-          <h3 className="py-6 font-bold text-xl">
+          <h3 className="py-6 font-bold text-base lg:text-xl">
             <Link href={`/posts/${post.slug}`}>
               {post.title}
             </Link>
