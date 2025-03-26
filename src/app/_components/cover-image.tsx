@@ -5,16 +5,17 @@ type Props = {
   title: string;
   src: string;
   slug?: string;
+  thumbnail?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, src, slug, thumbnail }: Props) => {
   const image = (
     <Image
       src={src}
       alt={title}
       className="w-full"
-      width={1300}
-      height={630}
+      width={thumbnail ? 400 : 832}
+      height={thumbnail ? 197: 410}
     />
   );
   return (

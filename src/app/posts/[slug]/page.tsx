@@ -25,7 +25,7 @@ export default async function Post(props: Params) {
     <main>
       {/* <Alert preview={post.preview} /> */}
 
-      <div className="mx-auto pt-10 px-[20px] w-full max-w-[1272px] lg:flex lg:justify-between lg:gap-10">
+      <div className="mx-auto pt-10 px-[20px] w-full max-w-[1272px] lg:flex lg:justify-between lg:gap-[40px]">
         <div className="w-full pb-12">
           <article className="post">
             <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} readingTime={post.readingTime} />
