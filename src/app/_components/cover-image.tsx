@@ -5,7 +5,7 @@ type Props = {
   title: string;
   src: string;
   slug?: string;
-  thumbnail?: string;
+  thumbnail?: boolean;
 };
 
 const CoverImage = ({ title, src, slug, thumbnail }: Props) => {
