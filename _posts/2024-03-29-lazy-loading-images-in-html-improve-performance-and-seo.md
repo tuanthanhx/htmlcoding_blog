@@ -91,5 +91,5 @@ Do **not** lazy load images that appear immediately on page load.
 ## 4. Conclusion
 Lazy loading is a **simple yet powerful** technique to improve website performance, reduce load times, and boost SEO. Use **native lazy loading (`loading="lazy"`)** when possible, and fall back to **JavaScript-based lazy loading** for more advanced scenarios.
 
-By implementing these strategies, your website will be **faster, more efficient, and user-friendly**! 🚀
+By implementing these strategies, your website will be **faster, more efficient, and user-friendly**!
 

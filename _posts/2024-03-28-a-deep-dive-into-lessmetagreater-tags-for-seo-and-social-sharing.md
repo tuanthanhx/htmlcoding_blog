@@ -101,5 +101,5 @@ Using the right `<meta>` tags can **boost your SEO**, **improve social media pre
 - Use **Open Graph and Twitter Card** tags for better social sharing.
 - Set **viewport and encoding** for mobile compatibility.
 
-By implementing these best practices, your website will perform better in **search results and social media platforms**. 🚀
+By implementing these best practices, your website will perform better in **search results and social media platforms**.
 

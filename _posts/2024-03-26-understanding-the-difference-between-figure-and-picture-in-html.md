@@ -76,5 +76,5 @@ If you need both a responsive image and a caption, you can combine `<picture>` i
 
 Both `<figure>` and `<picture>` enhance the way images are used in HTML. Use `<figure>` when you need a **captioned image** and `<picture>` when you need **responsive images**. If your use case requires both, combine them for the best results.
 
-By understanding their strengths, you can write **cleaner, more accessible, and more performant HTML**. 🚀
+By understanding their strengths, you can write **cleaner, more accessible, and more performant HTML**.
 

@@ -106,4 +106,4 @@ To test if the font size works correctly:
 ✅ Between `640px` and `1200px`, it **smoothly increases**.\
 ✅ At `1200px` or more, font size is **fixed at 36px**.
 
-This approach ensures smooth and controlled scaling of text while keeping it readable on all screen sizes. 🚀
+This approach ensures smooth and controlled scaling of text while keeping it readable on all screen sizes.

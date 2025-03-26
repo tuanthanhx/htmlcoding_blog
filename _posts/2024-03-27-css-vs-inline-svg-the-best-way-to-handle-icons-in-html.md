@@ -91,5 +91,5 @@ SVG (Scalable Vector Graphics) is a powerful alternative for handling icons in H
 - Use **inline SVG** for **scalable, customizable, and animatable** icons.
 - For best results, consider **mixing both**: use SVG for complex icons and CSS for simple UI elements.
 
-By understanding the strengths and weaknesses of both approaches, you can make the best choice for your web project! 🚀
+By understanding the strengths and weaknesses of both approaches, you can make the best choice for your web project!
 

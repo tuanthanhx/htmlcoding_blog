@@ -86,6 +86,3 @@ Buttons should have **clear text** instead of icons alone.
 
 ## 7. Conclusion
 By applying these techniques, you can create forms that are **usable by all users**, including those relying on assistive technologies. Prioritizing **labels, ARIA attributes, validation, keyboard navigation, and clear error messages** ensures an inclusive experience.
-
-Start making your forms accessible today! 🚀
-
