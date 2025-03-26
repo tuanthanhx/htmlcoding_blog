@@ -3,6 +3,7 @@ import Footer from '@/app/_components/footer';
 import { CMS_TITLE, CMS_DESC, HOME_OG_IMAGE_URL } from '@/lib/constants';
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
+import { GoogleTagManager } from '@next/third-parties/google';
 import cn from 'classnames';
 
 import '@/app/styles/globals.css';
@@ -30,6 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <GoogleTagManager gtmId="GTM-WKVRNL3G" />
         <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" />
       </head>
