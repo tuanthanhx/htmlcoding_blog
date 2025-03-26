@@ -11,7 +11,7 @@ author:
 
 ---
 
-# Introduction
+## Introduction
 
 Securing your website with SSL (HTTPS) is crucial for both security and SEO. Let's Encrypt provides free SSL certificates that can be automatically renewed. In this guide, we will install a Let's Encrypt SSL certificate and set up automatic renewal on a Linux server.
 

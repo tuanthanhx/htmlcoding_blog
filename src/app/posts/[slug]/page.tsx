@@ -8,7 +8,6 @@ import { CommonSidebar } from '@/app/_components/common-sidebar';
 import Container from '@/app/_components/container';
 import { PostBody } from '@/app/_components/post-body';
 import { PostHeader } from '@/app/_components/post-header';
-import Link from 'next/link';
 import DateFormatter from '@/app/_components/date-formatter';
 
 export default async function Post(props: Params) {
@@ -28,7 +27,7 @@ export default async function Post(props: Params) {
       <div className="mx-auto pt-10 px-[20px] w-full max-w-[1272px] lg:flex lg:justify-between lg:gap-[40px]">
         <div className="w-full pb-12">
           <article className="post">
-            <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} readingTime={post.readingTime} />
+            <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} author={post.author} tags={post.tags} readingTime={post.readingTime} />
             <PostBody content={content} />
           </article>
         </div>
