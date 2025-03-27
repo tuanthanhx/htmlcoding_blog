@@ -22,11 +22,6 @@ export function CommonSidebar() {
               <Image src="/assets/sponsors/vercel.jpg" alt="Vercel" className="w-full" width="272" height="143" />
             </Link>
           </li>
-          <li>
-            <Link href="https://nextjs.org/" target="_blank" className="hover:opacity-90" rel="noopener noreferrer nofollow">
-              <Image src="/assets/sponsors/next.jpg" alt="Vercel" className="w-full" width="272" height="143" />
-            </Link>
-          </li>
         </ul>
       </div>
       <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6 mt-5">
