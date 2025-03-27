@@ -6,8 +6,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "@ai-sdk/xai": "^1.2.3",
     "@mapbox/rehype-prism": "^0.9.0",
     "@next/third-parties": "latest",
+    "ai": "^4.2.6",
     "classnames": "^2.5.1",
     "date-fns": "^3.6.0",
     "gray-matter": "^4.0.3",
