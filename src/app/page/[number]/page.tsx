@@ -5,7 +5,7 @@ import { getAllPosts } from '@/lib/api';
 
 export async function generateStaticParams() {
   const allPosts = getAllPosts();
-  const postsPerPage = parseInt(process.env.POST_PER_PAGE, 10) || 10;
+  const postsPerPage = parseInt(process.env.POST_PER_PAGE ?? '10', 10) || 10;
   const totalPages = Math.ceil(allPosts.length / postsPerPage);
 
   return Array.from({ length: totalPages - 1 }, (_, i) => ({
@@ -19,7 +19,7 @@ interface PageProps {
 
 export default async function Page({ params }: PageProps) {
   const allPosts = getAllPosts();
-  const postsPerPage = parseInt(process.env.POST_PER_PAGE, 10) || 10;
+  const postsPerPage = parseInt(process.env.POST_PER_PAGE ?? '10', 10) || 10;
   
   const resolvedParams = await params;
   const currentPage = parseInt(resolvedParams.number, 10);

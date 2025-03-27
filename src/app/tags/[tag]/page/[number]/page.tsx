@@ -5,7 +5,7 @@ import { CommonSidebar } from '@/app/_components/common-sidebar';
 
 export async function generateStaticParams() {
   const allPosts = getAllPosts();
-  const postsPerPage = parseInt(process.env.POST_PER_PAGE, 10) || 10;
+  const postsPerPage = parseInt(process.env.POST_PER_PAGE ?? '10', 10) || 10;
   
   const allTags = new Set<string>(
     allPosts.flatMap((post) => post.tags?.map((tag) => tag.toLowerCase()) || [])
@@ -40,7 +40,7 @@ export default async function TagPaginationPage({ params }: TagPaginationProps) 
     post.tags?.map((t) => t.toLowerCase()).includes(decodedTag)
   );
 
-  const postsPerPage = parseInt(process.env.POST_PER_PAGE, 10) || 10;
+  const postsPerPage = parseInt(process.env.POST_PER_PAGE ?? '10', 10) || 10;
   const totalPosts = filteredPosts.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);
 
