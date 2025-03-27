@@ -3,7 +3,6 @@ import { notFound } from 'next/navigation';
 import { CommonSidebar } from '@/app/_components/common-sidebar';
 import { BlogGrid } from '@/app/_components/blog-grid';
 
-
 interface TagPageProps {
   params: Promise<{ tag: string }>;
 }
@@ -21,6 +20,15 @@ export default async function TagPage({ params }: TagPageProps) {
     notFound();
   }
 
+  const postsPerPage = 5;
+  const currentPage = 1;
+  const totalPosts = filteredPosts.length;
+  const totalPages = Math.ceil(totalPosts / postsPerPage);
+
+  const start = (currentPage - 1) * postsPerPage;
+  const end = start + postsPerPage;
+  const paginatedPosts = filteredPosts.slice(start, end);
+
   return (
     <main>
       <div className="mx-auto pt-10 px-[20px] w-full max-w-[1272px] lg:flex lg:justify-between lg:gap-[40px]">
@@ -28,7 +36,17 @@ export default async function TagPage({ params }: TagPageProps) {
           <h1 className="mb-10 text-lg lg:text-3xl font-bold">
             Posts tagged with #{decodedTag}
           </h1>
-          <BlogGrid posts={filteredPosts} />
+          <BlogGrid posts={paginatedPosts} />
+          <div className="mt-8 flex justify-center gap-4">
+            <span className="py-2">
+              Page {currentPage} of {totalPages}
+            </span>
+            {totalPages > 1 && (
+              <a href={`/tags/${tag}/page/2`} className="px-4 py-2 bg-gray-200 rounded">
+                Next
+              </a>
+            )}
+          </div>
         </div>
         <CommonSidebar />
       </div>
