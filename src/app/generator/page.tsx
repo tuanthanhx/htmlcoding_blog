@@ -1,14 +1,16 @@
 'use client';
 
 import { useState } from 'react';
+import { notFound } from 'next/navigation';
 
 export default function Index() {
   const [subject, setSubject] = useState<string>('');
   const [article, setArticle] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [password, setPassword] = useState('');
 
-  const correctPassword = '123654789';
+  if (process.env.NODE_ENV === 'production') {
+    notFound();
+  }
 
   const generateArticle = async () => {
     setIsLoading(true);
@@ -69,44 +71,37 @@ export default function Index() {
     <main>
       <div className="mx-auto pt-10 px-[20px] w-full max-w-[1272px] lg:flex lg:justify-between lg:gap-[40px]">
         <div className="w-full pb-12">
-          {password !== correctPassword ? (
-            <div>
-              <p className="font-bold mb-4">Access Restricted</p>
-              <input type="password" className="block w-full p-2 border-2 border-solid" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Enter password" />
+          <div>
+            <input type="text" value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Enter article subject" className="block w-full p-2 border-2 border-solid" />
+            <div className="mb-10">
+              <button className="mt-2 p-2 border-none bg-gray-500 text-white flex items-center justify-center" onClick={generateArticle} disabled={isLoading}>
+                {isLoading ? (
+                  <>
+                    <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                    </svg>
+                    Generating...
+                  </>
+                ) : (
+                  'Generate Article'
+                )}
+              </button>
             </div>
-          ) : (
-            <div>
-              <input type="text" value={subject} onChange={(e) => setSubject(e.target.value)} placeholder="Enter article subject" className="block w-full p-2 border-2 border-solid" />
-              <div className="mb-10">
-                <button className="mt-2 p-2 border-none bg-gray-500 text-white flex items-center justify-center" onClick={generateArticle} disabled={isLoading}>
-                  {isLoading ? (
-                    <>
-                      <svg className="animate-spin h-5 w-5 mr-2 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
-                      </svg>
-                      Generating...
-                    </>
-                  ) : (
-                    'Generate Article'
-                  )}
-                </button>
-              </div>
-              {article ? (
-                <>
-                  <pre className="language-md min-h-60">
-                    <code className="language-md whitespace-pre-wrap">{article}</code>
-                  </pre>
+            {article ? (
+              <>
+                <pre className="language-md min-h-60">
+                  <code className="language-md whitespace-pre-wrap">{article}</code>
+                </pre>
 
-                  <div className="mt-4 ">
-                    <button className="mt-2 p-2 border-none bg-green-500 text-white" onClick={downloadAsMarkdown}>
-                      Save as MD File
-                    </button>
-                  </div>
-                </>
-              ) : null}
-            </div>
-          )}
+                <div className="mt-4 ">
+                  <button className="mt-2 p-2 border-none bg-green-500 text-white" onClick={downloadAsMarkdown}>
+                    Save as MD File
+                  </button>
+                </div>
+              </>
+            ) : null}
+          </div>
         </div>
         <aside className="lg:flex-[360px_0_0] p-5 bg-gray-100"></aside>
       </div>
