@@ -20,7 +20,7 @@ export default async function TagPage({ params }: TagPageProps) {
     notFound();
   }
 
-  const postsPerPage = 5;
+  const postsPerPage = parseInt(process.env.POST_PER_PAGE, 10) || 10;
   const currentPage = 1;
   const totalPosts = filteredPosts.length;
   const totalPages = Math.ceil(totalPosts / postsPerPage);

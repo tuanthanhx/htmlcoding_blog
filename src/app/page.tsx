@@ -4,7 +4,7 @@ import { getAllPosts } from '@/lib/api';
 
 export default async function Index() {
   const allPosts = getAllPosts();
-  const postsPerPage = 5;
+  const postsPerPage = parseInt(process.env.POST_PER_PAGE, 10) || 10;
   const currentPage = 1;
 
   const totalPosts = allPosts.length;

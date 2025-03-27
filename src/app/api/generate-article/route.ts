@@ -10,7 +10,7 @@ interface ArticleResponse {
   content: string;
 }
 
-const model = xai('grok-2-1212');
+const model = xai(process.env.XAI_MODEL || 'grok-2-1212');
 
 export async function POST(request: NextRequest): Promise<Response> {
   try {
