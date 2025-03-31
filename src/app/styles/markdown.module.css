@@ -50,6 +50,13 @@
   @apply text-[1em];
 }
 
+.markdown a {
+  color: #2e68b8;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
 
 .markdown code:not([class*="language-"]) {
   padding: 0.05em 0.2em 0.1em;
