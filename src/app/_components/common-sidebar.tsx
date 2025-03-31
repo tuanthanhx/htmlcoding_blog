@@ -24,8 +24,28 @@ export function CommonSidebar() {
           </li>
         </ul>
       </div>
+      {/* <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6 mt-5">
+        <h2 className="mb-6 text-2xl font-bold">Quick Link</h2>
+        <ul className="space-y-2">
+          <li>
+            <Link href="#" target="_blank" className="hover:opacity-90">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="#" target="_blank" className="hover:opacity-90">
+              Policy
+            </Link>
+          </li>
+          <li>
+            <Link href="#" target="_blank" className="hover:opacity-90">
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div> */}
       <div className="bg-white shadow-[0_1px_1px_rgba(0,0,0,0.06)] p-6 mt-5">
-        <h2 className="mb-6 text-2xl font-bold">Tags</h2>
+        <h2 className="mb-6 text-2xl font-bold">Tag Cloud</h2>
         {allTags.length > 0 ? (
           <ul className="space-y-2 m-[0_-0.5rem_0_0]">
             {allTags.map((tag) => (
