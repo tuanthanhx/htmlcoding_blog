@@ -7,7 +7,7 @@ interface FormData {
   name: string;
   email: string;
   message: string;
-  recaptchaToken: string;
+  recaptchaToken?: string;
 }
 
 function validateInput({ name, email, message }: FormData): string | null {

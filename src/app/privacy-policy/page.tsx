@@ -51,7 +51,9 @@ export default function Index() {
               <h2>7. Changes to This Policy</h2>
               <p>We might update this policy if something changes. The latest version will always be here.</p>
               <h2>8. Contact Us</h2>
-              <p>Got questions? Reach out at <a href="mailto:hello@htmlcoding.net">hello@htmlcoding.net</a>.</p>
+              <p>
+                Got questions? Reach out at <a href="mailto:hello@htmlcoding.net">hello@htmlcoding.net</a>.
+              </p>
             </div>
           </div>
         </div>
@@ -60,3 +62,5 @@ export default function Index() {
     </main>
   );
 }
+
+export const dynamic = 'force-static';
